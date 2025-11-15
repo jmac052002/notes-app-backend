@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environments
+.venv/
+env/
+venv/
+
+# VS Code
+.vscode/
+
+# Packaging / build
+*.zip
+dist/
+build/
