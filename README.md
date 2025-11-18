@@ -99,6 +99,7 @@ GET /notes
 
 POST /notes
 
+<<<<<<< HEAD
 🚀 Deployment Instructions
 1. Zip your code
 
@@ -183,3 +184,101 @@ Add request validation
 Joseph McCoy (jmac052002)
 AWS Student • Python Developer • DevOps Learner
 GitHub: https://github.com/jmac052002
+=======
+Integrate both with Lambda.
+
+✦ 5. Deploy Stage $default
+✦ 6. Test with browser or curl
+📚 Architecture Reasoning (for SAA Exam Readiness)
+Why AWS Lambda?
+
+Event-driven
+
+No server management
+
+Cheap
+
+Scales automatically
+
+Perfect for REST APIs without heavy compute
+
+Why DynamoDB vs RDS?
+
+No servers
+
+Instant scaling
+
+Millisecond latency
+
+Pay-per-request pricing
+
+Dynamic schema
+
+Why API Gateway HTTP API (not REST API)?
+
+Lower cost
+
+Lower latency
+
+Built for “Lambda proxy” microservices
+
+Perfect for simple serverless APIs
+
+Why separate GET/POST routes?
+
+API Gateway routing decouples transport from application logic
+
+Cleaner, more scalable than “single Lambda with switch()”
+
+🧭 Scalability Considerations
+
+This architecture supports:
+
+Massive parallel writes (DynamoDB partitions scale automatically)
+
+High read throughput
+
+Lambda concurrency scaling
+
+Fully managed infrastructure
+
+If traffic increases 1000x:
+
+No auto-scaling groups
+
+No containers
+
+No servers
+
+No patching
+AWS handles everything.
+
+🔥 Production Enhancement Ideas
+
+These are fantastic talking points for interviews:
+
+Add user authentication via Cognito
+
+Add API Keys + throttling
+
+Add X-Ray tracing
+
+Add CloudFormation or Terraform IaC
+
+Add S3-backed frontend
+
+Add CI/CD pipeline (GitHub Actions → Lambda)
+
+Add DLQ + retries for advanced resilience
+
+🔗 Repository
+
+GitHub repo:
+
+https://github.com/jmac052002/notes-app-backend
+
+📄 License
+
+MIT License
+Feel free to use this architecture as a starter for your own AWS projects.
+>>>>>>> 59edb1f (docs: add Solutions Architect–level README with architecture, routes, and AWS design reasoning)
