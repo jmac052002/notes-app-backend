@@ -192,6 +192,7 @@ GET /notes
 
 POST /notes
 
+<<<<<<< HEAD
 Integrate both with Lambda.
 
 ✦ 5. Deploy Stage $default
@@ -288,3 +289,89 @@ https://github.com/jmac052002/notes-app-backend
 
 MIT License
 Feel free to use this architecture as a starter for your own AWS projects.
+=======
+🚀 Deployment Instructions
+1. Zip your code
+
+From inside the project:
+
+zip -r function.zip src/
+
+
+or use your existing zip.
+
+2. Upload to Lambda
+
+AWS Console → Lambda → notes-app-handler:
+
+Code → Upload from → .zip file
+
+
+Click Deploy.
+
+3. Test in Lambda Console
+
+Use a test event like:
+
+{
+  "httpMethod": "POST",
+  "body": "{\"title\":\"Lambda Test\",\"content\":\"Hello\"}"
+}
+
+4. Deploy API Gateway
+
+API Gateway → Your API → Stages → $default
+Automatic deployment should be enabled.
+
+🧪 Local Testing (Python)
+
+You can simulate a POST event locally:
+
+python3 - << 'EOF'
+from src.handler import lambda_handler
+print(lambda_handler({
+    "requestContext": {"http": {"method": "POST", "path": "/notes"}},
+    "body": '{"title":"Local Test","content":"From local Python"}'
+}, {}))
+EOF
+
+🎯 What This Project Demonstrates (Great for Employers)
+
+Real API Gateway integration
+
+Lambda routing logic
+
+DynamoDB CRUD operations
+
+IAM Role design for DynamoDB access
+
+CloudWatch debugging
+
+REST API best-practices
+
+Infrastructure architecture thinking
+
+This is exactly the type of project AWS Solutions Architect Associate candidates build to understand serverless design.
+
+📌 Future Enhancements (Optional)
+
+These are perfect improvements you can add later:
+
+Add /notes/{id} GET, PUT, DELETE
+
+Add user authentication (Cognito)
+
+Add CORS + React frontend
+
+Add Terraform or CloudFormation IaC
+
+Add pagination
+
+Add request validation
+
+🧑‍💻 Author
+
+Joseph McCoy (jmac052002)
+AWS Student • Python Developer • DevOps Learner
+GitHub: https://github.com/jmac052002
+>>>>>>> b7d2a03 (docs: add Solutions Architect–level README)
